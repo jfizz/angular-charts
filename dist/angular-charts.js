@@ -99,8 +99,8 @@ angular.module('angularCharts').directive('acChart', [
           isAnimate: true,
           yAxisTickFormat: 's'
         };
-      var totalWidth = element[0].clientWidth;
-      var totalHeight = element[0].clientHeight;
+      var totalWidth = attrs.chartWidth || element[0].clientWidth;
+      var totalHeight = attrs.chartHeight || element[0].clientHeight;
       if (totalHeight === 0 || totalWidth === 0) {
         throw new Error('Please set height and width for the chart element');
       }
